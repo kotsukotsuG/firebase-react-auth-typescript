@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
 import app from './base';
 
-type Props = {};
+// type Props = {};
 
 const handleClick = (): void => {
   app.auth().signOut();
 };
-const Home: FC<Props> = () => {
+const Home: FC<void> = () => {
   return (
     <>
       <h1>Home</h1>
