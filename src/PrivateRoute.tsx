@@ -3,7 +3,7 @@ import { Route, Redirect } from 'react-router-dom';
 import { AuthContext } from './Auth';
 import { ContextProps } from './types';
 
-type Props = { exact: true; path: string; component: FC<Props> };
+type Props = { exact: true; path: string; component: FC<object> };
 
 const PrivateRoute: FC<Props> = ({
   component: RouteComponent,
