@@ -1,12 +1,11 @@
 import React, { FC } from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import app from './base';
-
-// type Props = {};
 
 const handleClick = (): void => {
   app.auth().signOut();
 };
-const Home: FC<void> = () => {
+const Home: FC<RouteComponentProps> = () => {
   return (
     <>
       <h1>Home</h1>
