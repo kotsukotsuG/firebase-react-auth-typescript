@@ -1,16 +1,15 @@
 import React, { FC, useContext } from 'react';
-import { Route, Redirect } from 'react-router-dom';
-import { AuthContext } from './Auth';
-import { ContextProps } from './types';
+import { Route, Redirect, RouteComponentProps } from 'react-router-dom';
+import { AuthContext, AuthContextProps } from './Auth';
 
-type Props = { exact: true; path: string; component: FC<object> };
+type Props = { exact: true; path: string; component: FC<RouteComponentProps> };
 
 const PrivateRoute: FC<Props> = ({
   component: RouteComponent,
   exact,
   path,
 }) => {
-  const { currentUser } = useContext<ContextProps>(AuthContext);
+  const { currentUser } = useContext<AuthContextProps>(AuthContext);
 
   return (
     <Route
@@ -18,6 +17,7 @@ const PrivateRoute: FC<Props> = ({
       path={path}
       render={(routeProps) =>
         currentUser ? (
+          /* eslint-disable react/jsx-props-no-spreading */
           <RouteComponent {...routeProps} />
         ) : (
           <Redirect to="/login" />
