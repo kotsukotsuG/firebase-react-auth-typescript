@@ -5,6 +5,7 @@ import app from './base';
 const handleClick = (): void => {
   app.auth().signOut();
 };
+
 const Home: FC<RouteComponentProps> = (props) => {
   return (
     <>
